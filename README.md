@@ -9,7 +9,7 @@
 支持 **Windows · macOS · Linux**（DSH Web GUI）——纯 JavaScript，无原生依赖。
 
 ```sh
-dsh plugin --profile web add dsh-better-session-title
+dsh plugin --profile web add github:xinspark/dsh-better-session-title#v1.0.0
 ```
 
 **快速上手** · [为什么做这个插件](#为什么做这个插件) · [主要功能](#主要功能) · [安装](#安装) · [使用](#使用) · [与 basrs-sidebar 的关系](#与-basrs-sidebar-的关系) · [二次开发](#二次开发) · [许可证](#许可证)
@@ -46,15 +46,15 @@ DSH 原生顶栏中央显示会话标题（层级面包屑），但工作区/会
 `dsh-better-session-title` 是一个**组合包（bundle）**——以 npm 包形式分发的配置层（见[官方插件文档](https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish)）。用 `dsh plugin` 命令安装进 profile：它会自动链接包并追加到 `dsh.profile.bundles`：
 
 ```sh
-# 从 npm 注册表
-dsh plugin --profile web add dsh-better-session-title
+# 从 GitHub（纯 JS 包无需构建步骤，主分发渠道）
+dsh plugin --profile web add github:xinspark/dsh-better-session-title#v1.0.0
 
 # 或本地目录 / 打包好的 tarball
 dsh plugin --profile web add ./dsh-better-session-title
 dsh plugin --profile web add ./dsh-better-session-title-1.0.0.tgz
 
-# 或直接从 git（纯 JS 包无需构建步骤）
-dsh plugin --profile web add github:xinspark/dsh-better-session-title#<sha>
+# 或从 npm 注册表（发布后可用）
+dsh plugin --profile web add dsh-better-session-title
 ```
 
 然后启动 Web UI：`dsh web`（或 `dsh --profile web`）。首次 `add` 会自动用 `@deepseek-ai/dsh-base` 初始化 profile。

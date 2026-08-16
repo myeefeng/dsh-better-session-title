@@ -9,7 +9,7 @@
 Works on **Windows · macOS · Linux** (DSH Web GUI) — plain JavaScript, no native dependencies.
 
 ```sh
-dsh plugin --profile web add dsh-better-session-title
+dsh plugin --profile web add github:xinspark/dsh-better-session-title#v1.0.0
 ```
 
 **Quick Start** · [Why This Plugin](#why-this-plugin) · [Features](#features) · [Installation](#installation) · [Usage](#usage) · [Relationship with basrs-sidebar](#relationship-with-basrs-sidebar) · [Development](#development) · [License](#license)
@@ -46,15 +46,15 @@ All inline row actions reuse native DSH capabilities: rename workspace/session, 
 `dsh-better-session-title` is a **bundle** — a configuration layer distributed as an npm package (see the [official plugin docs](https://deepseek-harness.github.io/deepseek-harness/develop/basic/publish)). Install it into a profile with `dsh plugin`: it links the package and appends it to `dsh.profile.bundles`:
 
 ```sh
-# from the npm registry
-dsh plugin --profile web add dsh-better-session-title
+# from GitHub (pure JS package, no build step — primary channel)
+dsh plugin --profile web add github:xinspark/dsh-better-session-title#v1.0.0
 
 # or a local directory / packed tarball
 dsh plugin --profile web add ./dsh-better-session-title
 dsh plugin --profile web add ./dsh-better-session-title-1.0.0.tgz
 
-# or straight from git (pure JS package, no build step)
-dsh plugin --profile web add github:xinspark/dsh-better-session-title#<sha>
+# or from the npm registry (once published)
+dsh plugin --profile web add dsh-better-session-title
 ```
 
 Then start the Web UI: `dsh web` (or `dsh --profile web`). The first `add` auto-initializes the profile with `@deepseek-ai/dsh-base`.

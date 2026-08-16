@@ -1,0 +1,45 @@
+{
+  "name": "dsh-better-session-title",
+  "version": "1.0.0",
+  "description": "Better Session Title — replace the DSH session topbar title with a workspace/session breadcrumb: switch workspaces and sessions right from the topbar.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinspark/dsh-better-session-title.git"
+  },
+  "homepage": "https://github.com/xinspark/dsh-better-session-title",
+  "bugs": {
+    "url": "https://github.com/xinspark/dsh-better-session-title/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "harness",
+    "plugin",
+    "breadcrumb",
+    "workspace",
+    "session"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "CHANGELOG.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}

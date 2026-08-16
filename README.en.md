@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="docs/screenshots/workspace-dropdown.png" alt="Better Session Title — workspace dropdown" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/v/release/xinspark/dsh-better-session-title?style=flat&amp;label=release&amp;color=08C" alt="GitHub release">
   <img src="https://img.shields.io/badge/plugin-UI%20enhancement-47848F?style=flat" alt="UI enhancement plugin">
   <img src="https://img.shields.io/badge/DSH%20Web%20GUI-Windows%20%7C%20macOS%20%7C%20Linux-4493F8?style=flat" alt="Windows | macOS | Linux">
@@ -53,6 +57,20 @@ The bundle patch (`cordis.patch.yml`) registers both the host and client halves 
 | Native-consistent interactions | The dropdown is a self-drawn layer replicating the native `Menu.module.css` token-for-token (row height 40, padding 8/10, radius 10, same shadow/border tokens); the more menu and rename/delete dialogs use the native `Menu` / `Modal` / `Button` / `Input` (autoFocus, select-all, IME-safe Enter, duplicate workspace-name check, error rows). |
 | Shared lifecycle | The more menu closes with its owning dropdown (outside click / Escape / selection / switching) — no orphan menus. |
 | Bilingual | Built-in zh/en dictionaries that follow the DSH language switch live. |
+
+## Screenshots
+
+**Session dropdown open** — switch sessions, create new:
+
+![Session dropdown](docs/screenshots/session-dropdown.png)
+
+**Session "more" menu** — hover the row end for rename / fork / archive:
+
+![Session more menu](docs/screenshots/session-more-menu.png)
+
+**Workspace dropdown open** — switch workspaces, add workspace:
+
+![Workspace dropdown](docs/screenshots/workspace-dropdown.png)
 
 ## Usage
 

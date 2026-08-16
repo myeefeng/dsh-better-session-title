@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="docs/screenshots/workspace-dropdown.png" alt="Better Session Title 工作区下拉展示" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/github/v/release/xinspark/dsh-better-session-title?style=flat&amp;label=release&amp;color=08C" alt="GitHub release">
   <img src="https://img.shields.io/badge/plugin-UI%20%E5%A2%9E%E5%BC%BA-47848F?style=flat" alt="UI enhancement plugin">
   <img src="https://img.shields.io/badge/DSH%20Web%20GUI-Windows%20%7C%20macOS%20%7C%20Linux-4493F8?style=flat" alt="Windows | macOS | Linux">
@@ -53,6 +57,20 @@ dsh plugin --profile web add github:xinspark/dsh-better-session-title#v1.0.0
 | 原生一致的交互 | 下拉为自绘层，样式逐值复刻原生 `Menu.module.css`（行高 40、padding 8/10、圆角 10、同款 shadow/边框 token）；更多菜单、重命名/删除对话框全部使用原生 `Menu` / `Modal` / `Button` / `Input`（autoFocus、全选、输入法组合 Enter 防误触、工作区重复名校验、错误行）。 |
 | 生命周期一致 | 更多菜单跟随其所在下拉同生命周期：下拉关闭（点击外部 / Escape / 选择 / 切换）时菜单一并关闭，不残留孤立菜单。 |
 | 双语言 | 内置 zh/en 双语言字典，跟随 DSH 语言切换实时生效。 |
+
+## 截图
+
+**会话下拉展开**——切换会话、新建会话：
+
+![会话下拉](docs/screenshots/session-dropdown.png)
+
+**会话更多菜单**——悬停行尾，重命名/分支/归档：
+
+![会话更多菜单](docs/screenshots/session-more-menu.png)
+
+**工作区下拉展开**——切换工作区、添加工作区：
+
+![工作区下拉](docs/screenshots/workspace-dropdown.png)
 
 ## 使用
 

@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2026-10-26
+
+### Added
+
+- **新会话页也有面包屑了。** 宿主在新会话时抑制顶栏标题内容（`hideChrome`：`!hideChrome` 才渲染 `titleCluster`），而 `conversation.header.leading` 正是宿主为「会话之前就要有全局导航」预留的空位（scope=root、常驻渲染）—— 于是新会话页顶栏是空的，想看历史会话只能去开侧边栏。插件现在额外在 `conversation.header.leading` 注册一份：显示「工作区 / 新会话」，会话级下拉里列出该工作区的历史会话，点一下直接跳过去，不用开侧边栏。两份面包屑**互斥** —— 有真实会话时 leading 这份返回 `null`，顶栏交给 `header.actions` 那一份，同一时刻只有一条。判定「新会话态」用宿主自己的信号：**主视图保留的是空白会话**（宿主的新会话标记，见其 `mainBlank()`：`session.blank && retainedBy.mainView > 0`）—— 只看「有没有主视图会话」会永远判成有会话（新会话页也保留着那个空白会话），这一份就永远不渲染。注册选项只给 `name`：`conversation.header.leading` 的契约是 `registerOptions: []`，多带 `id` 会让 `single` 槽的占用者落到别的格去，宿主自己的示例同样只给 `name`。
+
+### Fixed
+
+- **「添加工作区」不再报错。** 宿主的目录选择器是「组合能力」，`native`（OS 选择器，只有 `pick`）与 `browse`（应用内浏览，只有 `list` / `createDirectory`）互斥；1.3.0 硬假设「只有 browse」并自建浏览对话框，宿主组合成 `native` 之后 `listDirectory` 被宿主当场拒绝，「添加工作区」必然报 `directory browse failed: directory-picker/unavailable: directoryPicker.list needs the browse capability; the composed picker serves "native"`。现在按宿主的实际组合分流：先调宿主自己的 `pick`（桌面壳下走 `__DSH_DIRECTORY_PICKER__`，与原生 native 流程同款），只有当宿主明确说它提供的是 `browse` 时才退回自建的应用内浏览对话框；能力结论在会话内缓存，不再每次点都先吃一个失败调用。选完目录后建工作区并打开，取消则静默收工，其它失败照旧弹「添加工作区失败」。
+
 ## [1.3.1] - 2026-10-19
 
 ### Fixed
